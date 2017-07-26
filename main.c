@@ -20,10 +20,7 @@ int main(int argc, char** argv) {
 
 	//send the request
 	while(1) {
-        int werrcode = 0;
-        int rerrcode = 0;
-        werrcode = write(socket_id, request, strlen(request));
-        if((werrcode == -1) || (rerrcode == -1)) {
+        if(write(socket_id, request, strlen(request)) == -1 || read(socket_id, message, 1024 * 1024) == -1) {
             establish_connection(socket_id);
             write(socket_id, request, strlen(request));
             read(socket_id, message, 1024 * 1024);
