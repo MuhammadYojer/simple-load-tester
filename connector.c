@@ -6,6 +6,8 @@
 #include <string.h>
 #include <netdb.h>
 
+static struct sockaddr_in servaddr;
+
 int get_socket(void) {
     int socket_id;
 

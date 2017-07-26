@@ -5,8 +5,6 @@
 
 #include <netinet/in.h>
 
-struct sockaddr_in servaddr;
-
 int get_socket(void);
 
 void get_ip_address(char addr[]);
